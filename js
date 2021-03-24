@@ -51,8 +51,6 @@ if (correct >= 20 ){
     }
     resetFunction();
 }
-
-//document.getElementById correct is working but not how it should be
  document.getElementById("correct").innerHTML = correct;
  document.getElementById("playerScore").innerHTML = playerScore;
  
