@@ -6,7 +6,7 @@ var randomNumber = Math.floor(Math.random() * 20) + 1;
 var allGuesses = [];
 var playerScore = 0;
 var correct = 0;
-
+var highscore = 0;
 
 function myFunction(){
 
@@ -37,45 +37,33 @@ function myFunction(){
  } else {
      text = "nope try again";
      document.getElementById("response").innerHTML = text
-     document.getElementById("answer").innerHTML = "The number I chose will show here when you get it correct"; //+ randomNumber;
+     document.getElementById("answer").innerHTML = "The number I chose will show here when you get it correct";// + randomNumber;
     document.getElementById("yourGuess").innerHTML = "You chose " + x;
     playerScore = playerScore - 2;
     
  }
+if (correct >= 20 ){
+    if (playerScore > highscore){
+        console.log("Player score = "+playerScore)
+        highscore = playerScore;
+        console.log("This is the high score: " + highscore) 
+        document.getElementById("highScore").innerHTML = "High Score: " + highscore;
+    }
+    resetFunction();
+}
 
 //document.getElementById correct is working but not how it should be
  document.getElementById("correct").innerHTML = correct;
  document.getElementById("playerScore").innerHTML = playerScore;
  
 };
-
-
-
-//#endregion
-
-
-
-//#region not working
-
 //reset 
 function resetFunction(){
-    if (document.getElementById("correct").innerHTML == 20){
-  correct = 0;
-  playerScore = 0;
-    }
-};
+    correct = 0;
+    playerScore = 0;
+    NumbersGuessed = 0;
+    allGuesses=[];
     
-
-
-//highscore
-
-if (document.getElementById("correct").innerHTML == 20 && playerScore > document.getElementById("highScore").innerHTML){
-    alert("Congrats, you are the highest score. Think you can beat it?");
-}
-if (document.getElementById("correct").innerHTML == 20 && playerScore < document.getElementById("highScore").innerHTML){
-    alert("You are not the highest score. Try again.");
-}
-if (playerScore > document.getElementById("highScore").innerHTML && document.getElementById("correct").innerHTML == 0){
-    document.getElementById("highScore").innerHTML = playerScore;
 };
+
 //#endregion
