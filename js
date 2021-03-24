@@ -79,3 +79,4 @@ if (playerScore > document.getElementById("highScore").innerHTML && document.get
     document.getElementById("highScore").innerHTML = playerScore;
 };
 //#endregion
+
