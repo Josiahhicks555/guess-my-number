@@ -33,13 +33,14 @@ function myFunction(){
     document.getElementById("yourGuess").innerHTML = "You chose " + x;
     playerScore = playerScore + 5;
     correct = correct + 1;
+    randomNumber = Math.floor(Math.random() * 20) + 1;
  } else {
      text = "nope try again";
      document.getElementById("response").innerHTML = text
     document.getElementById("answer").innerHTML = "The number I chose was " + randomNumber;
     document.getElementById("yourGuess").innerHTML = "You chose " + x;
     playerScore = playerScore - 2;
-
+    
  }
 
 //document.getElementById correct is working but not how it should be
@@ -54,18 +55,13 @@ function myFunction(){
 
 
 
-
+//not working
 
 //reset 
 function resetFunction(){
-    if(document.getElementById("correct").innerHTML <= 20){
-    playerScore = 0;
-    document.getElementById("NumbersGuessed").innerHTML = answer;
-    } else{
-        alert('HighScore');
-    }
+  
 };
-
+    
 
 
 //highscore
@@ -79,3 +75,4 @@ if (document.getElementById("correct").innerHTML == 20 && playerScore < document
 if (playerScore > document.getElementById("highScore").innerHTML && document.getElementById("correct").innerHTML == 0){
     document.getElementById("highScore").innerHTML = playerScore;
 };
+
