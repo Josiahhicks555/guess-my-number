@@ -59,7 +59,10 @@ function myFunction(){
 
 //reset 
 function resetFunction(){
-  
+    if (document.getElementById("correct").innerHTML == 20){
+  correct = 0;
+  playerScore = 0;
+    }
 };
     
 
@@ -69,11 +72,10 @@ function resetFunction(){
 if (document.getElementById("correct").innerHTML == 20 && playerScore > document.getElementById("highScore").innerHTML){
     alert("Congrats, you are the highest score. Think you can beat it?");
 }
-else if (document.getElementById("correct").innerHTML == 20 && playerScore < document.getElementById("highScore").innerHTML){
+if (document.getElementById("correct").innerHTML == 20 && playerScore < document.getElementById("highScore").innerHTML){
     alert("You are not the highest score. Try again.");
 }
-else (playerScore > document.getElementById("highScore").innerHTML && document.getElementById("correct").innerHTML == 0){
+if (playerScore > document.getElementById("highScore").innerHTML && document.getElementById("correct").innerHTML == 0){
     document.getElementById("highScore").innerHTML = playerScore;
 };
 //#endregion
-
