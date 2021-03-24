@@ -37,7 +37,7 @@ function myFunction(){
  } else {
      text = "nope try again";
      document.getElementById("response").innerHTML = text
-    document.getElementById("answer").innerHTML = "The number I chose was " + randomNumber;
+     document.getElementById("answer").innerHTML = "The number I chose will show here when you get it correct"; //+ randomNumber;
     document.getElementById("yourGuess").innerHTML = "You chose " + x;
     playerScore = playerScore - 2;
     
@@ -55,7 +55,7 @@ function myFunction(){
 
 
 
-//not working
+//#region not working
 
 //reset 
 function resetFunction(){
@@ -69,10 +69,11 @@ function resetFunction(){
 if (document.getElementById("correct").innerHTML == 20 && playerScore > document.getElementById("highScore").innerHTML){
     alert("Congrats, you are the highest score. Think you can beat it?");
 }
-if (document.getElementById("correct").innerHTML == 20 && playerScore < document.getElementById("highScore").innerHTML){
+else if (document.getElementById("correct").innerHTML == 20 && playerScore < document.getElementById("highScore").innerHTML){
     alert("You are not the highest score. Try again.");
 }
-if (playerScore > document.getElementById("highScore").innerHTML && document.getElementById("correct").innerHTML == 0){
+else (playerScore > document.getElementById("highScore").innerHTML && document.getElementById("correct").innerHTML == 0){
     document.getElementById("highScore").innerHTML = playerScore;
 };
+//#endregion
 
